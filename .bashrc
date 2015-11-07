@@ -1,6 +1,3 @@
-export PYTHONPATH=${PYTHONPATH}:~/Code/PythonModules/
-export PYTHONPATH=${PYTHONPATH}:~/picoscope/
-
 alias l='ls -l'
 alias ö='ls -l'
 alias g='gvim &>/dev/null'
