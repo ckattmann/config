@@ -7,6 +7,8 @@ sudo apt-get install python-dev
 
 # Set up Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git config --global user.name "kipfer"
+git config --global push.default simple
 
 python ~/.vim/bundle/YouCompleteMe/install.py
 
