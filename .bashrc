@@ -47,3 +47,6 @@ alias bigfiles='du -a | sort -n -r | head -n 20'
 
 # Use portable pypy 2.4
 alias py24='~/spielwiese/pypy2.4-alpha/bin/pypy'
+
+# added by Anaconda3 2.4.0 installer
+export PATH="/home/kipfer/anaconda3/bin:$PATH"
