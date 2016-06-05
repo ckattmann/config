@@ -44,7 +44,7 @@ map <C-right> <C-w><right>
 
 " Use <F6> to search, <ESC> to switch off highlighting
 map <F6> *N
-noremap <ESC> :nohl<CR><ESC>
+noremap <ESC><ESC> :nohl<CR><ESC>
 
 " Map Space to / for quicker search
 map <Space> /
