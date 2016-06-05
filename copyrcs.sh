@@ -29,14 +29,13 @@ popd
 
 echo "-- Setting Wallpaper"
 WALLPAPERLINK=https://wallpaperscraft.com/image/los_angeles_laguna_beach_buildings_skyscrapers_58395_3840x2400.jpg
-WALLPAPERLINKNOHTTPS=${WALLPAPERLINK:7}
 sudo apt-get install -y feh
 sudo apt-get install -y curl
 pushd .
 cd ~/Downloads
-curl --silent -o ~/Downloads/ $WALLPAPERLINK
+curl --silent -o ~/Downloads/wallpaper.jpg $WALLPAPERLINK
 popd
-feh --bg-scale ~/Downloads/${WALLPAPERLINKNOTHTTPS##/*/}
+feh --bg-scale ~/Downloads/wallpaper.jpg
 
 
 echo "-- Setting up Vim"
