@@ -32,7 +32,10 @@ WALLPAPERLINK=https://wallpaperscraft.com/image/los_angeles_laguna_beach_buildin
 WALLPAPERLINKNOHTTPS=${WALLPAPERLINK:7}
 sudo apt-get install -y feh
 sudo apt-get install -y curl
-curl --silent ~/Downloads/ $WALLPAPERLINK
+pushd .
+cd ~/Downloads
+curl --silent -o ~/Downloads/ $WALLPAPERLINK
+popd
 feh --bg-scale ~/Downloads/ ${WALLPAPERLINKNOTHTTPS##/*/}
 
 
