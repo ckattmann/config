@@ -1,5 +1,6 @@
 #!/bin/bash
 
+sudo apt-get update
 
 echo "-- Install and Configure git"
 sudo apt-get install -y git
@@ -15,13 +16,15 @@ cp $(pwd)/terminalrc ~/.config/xfce4/terminal
 echo "-- Installing i3 stuff"
 sudo apt-get install -y i3 i3status dmenu
 # Install i3-gaps including all dependencies
-sudo apt-get install -y libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel
+sudo apt-get install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev
+rm -rf i3-gaps
 git clone https://www.github.com/Airblader/i3 i3-gaps
+pushd .
 cd i3-gaps
 git checkout gaps && git pull
 make
 sudo make install
-cd ..
+popd
 
 
 echo "-- Setting Wallpaper"
@@ -29,7 +32,7 @@ WALLPAPERLINK=https://wallpaperscraft.com/image/los_angeles_laguna_beach_buildin
 WALLPAPERLINKNOHTTPS=${WALLPAPERLINK:7}
 sudo apt-get install -y feh
 sudo apt-get install -y curl
-curl -O ~/Downloads/ $WALLPAPERLINK
+curl --silent ~/Downloads/ $WALLPAPERLINK
 feh --bg-scale ~/Downloads/ ${WALLPAPERLINKNOTHTTPS##/*/}
 
 
@@ -45,8 +48,8 @@ sudo apt-get install -y vim-gnome
 sudo apt-get install -y build-essential cmake
 sudo apt-get install -y python-dev
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-python ~/.vim/bundle/YouCompleteMe/install.py
 vim +PluginInstall +qall
+python ~/.vim/bundle/YouCompleteMe/install.py
 
 echo "-- Copying .bashrc into location"
 if [ -e "~/.bashrc" ]
