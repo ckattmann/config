@@ -36,7 +36,7 @@ pushd .
 cd ~/Downloads
 curl --silent -o ~/Downloads/ $WALLPAPERLINK
 popd
-feh --bg-scale ~/Downloads/ ${WALLPAPERLINKNOTHTTPS##/*/}
+feh --bg-scale ~/Downloads/${WALLPAPERLINKNOTHTTPS##/*/}
 
 
 echo "-- Setting up Vim"
@@ -49,6 +49,7 @@ fi
 ln -s $(pwd)/.vimrc ~/.vimrc 
 sudo apt-get install -y vim-gnome
 sudo apt-get install -y build-essential cmake
+B
 sudo apt-get install -y python-dev
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
