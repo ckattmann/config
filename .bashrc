@@ -38,6 +38,7 @@ alias plot='~/Dropbox/config/plot_npy.py'
 
 # Open Python interpreter with numpy, matplotlib and seaborn (pretty plots) preloaded
 alias numpy='python -i -c "import numpy as np;import matplotlib.pyplot as plt;import seaborn"'
+alias ipython='ipython --pylab'
 
 # Show biggest files in current directory
 alias bigfiles='du -a | sort -n -r | head -n 20'
@@ -45,5 +46,5 @@ alias bigfiles='du -a | sort -n -r | head -n 20'
 # Use portable pypy 2.4
 alias py24='~/spielwiese/pypy2.4-alpha/bin/pypy'
 
-# added by Anaconda3 2.4.0 installer
+# added by Anaconda3 4.0.0 installer
 export PATH="/home/kipfer/anaconda3/bin:$PATH"

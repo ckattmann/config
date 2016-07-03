@@ -7,6 +7,8 @@ sudo apt-get install -y git
 git config --global user.name "kipfer"
 git config --global push.default simple
 
+echo "-- Download and install Anaconda"
+# TODO
 
 echo "--Configure Terminal"
 # This path is correct for Linux Mint 17.3, might be .config/Terminal for others
@@ -53,7 +55,7 @@ sudo apt-get install -y python-dev
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 python ~/.vim/bundle/YouCompleteMe/install.py
-
+chown -R kipfer ~/.vim
 echo "-- Copying .bashrc into location"
 if [ -e "~/.bashrc" ]
 then

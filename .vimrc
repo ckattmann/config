@@ -7,7 +7,11 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-airline/vim-airline'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
+
+set laststatus=2
 
 filetype indent plugin on   " Activate things
 
@@ -63,14 +67,14 @@ autocmd FileType html nmap <F4> <ESC>I<!--<SPACE><ESC>A<SPACE>--><ESC>
 "
 "------PYTHON------
 " Execute Script with <F5>
-map <leader>p :w<CR> :!python %<CR>
-autocmd FileType python nmap <F5> :wa<CR>:!python %<CR>
+map <leader>p :w<CR> :!~/anaconda3/bin/python %<CR>
+autocmd FileType python nmap <F5> :wa<CR>:!~/anaconda3/bin/python %<CR>
 " Comment out line with <F4>
 autocmd FileType python nmap <F4> I#<ESC>
 
 "------LATEX-------
 " Compile Latex and show pdf
-autocmd FileType tex nmap <F5> :wa<CR> :!rm %:r.aux<CR> :!pdflatex %<CR>:!pdflatex %<CR>:!evince %:r.pdf<CR>
+autocmd FileType tex nmap <F5> :wa<CR>:!rm -f %:r.aux<CR>:!pdflatex %<CR>:!pdflatex %<CR>:!evince %:r.pdf<CR>
 " Expand bla to \bla{} and place cursor inside braces
 autocmd FileType tex imap <F6> {}<ESC>bbi\<ESC>wwa
 " Expand bla to \begin{bla} ... \end{bla} and places cursor on new line in
