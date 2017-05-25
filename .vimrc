@@ -1,5 +1,6 @@
 set nocompatible            " no vi compatibility
 filetype off
+
 " Set up Vundle
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()

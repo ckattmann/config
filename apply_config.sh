@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt-get update
+sudo apt-get upgrade -y
 
 echo "-- Install and Configure git"
 sudo apt-get install -y git
