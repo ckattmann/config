@@ -6,10 +6,14 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'Valloric/MatchTagAlways'
+Plugin 'Valloric/MatchTagAlways' " => Highlights the active tags
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-commentary' " => gcc to comment out/in lines 
+Plugin 'tpope/vim-surround' " => cs[{ to change ticks from [ to { 
+Plugin 'mattn/emmet-vim' " => <C>y, for fast html
+Plugin 'scrooloose/nerdtree'
 call vundle#end()
 
 set laststatus=2
@@ -26,6 +30,16 @@ set hlsearch
 
 set tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
+" Automatically set parent directory of file as cwd
+set autochdir
+
+" CTRL-T for Nerdtree
+map <C-t> :NERDTreeToggle<CR>
+
+" More logical behaviour for j and k on multiline rows
+noremap j gj
+noremap k gk
+
 map <C-s> :w<CR>
 map <C-x> :x<CR>
 map <C-q> :q<CR>
@@ -33,8 +47,9 @@ map <C-q> :q<CR>
 " <F9> to open vsplit
 map <F9> :w<CR>:vsplit<CR><C-w><right>:e .<CR>
 
-" Open .vimrc
+" Open .vimrc with <F12>
 map <F12> :wa<CR><F9>:e ~/.vimrc<CR>
+
 augroup source
 autocmd!
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -75,7 +90,8 @@ autocmd FileType python nmap <F4> I#<ESC>
 
 "------LATEX-------
 " Compile Latex and show pdf
-autocmd FileType tex nmap <F5> :wa<CR>:!rm -f %:r.aux<CR>:!pdflatex %<CR>:!pdflatex %<CR>:!evince %:r.pdf<CR>
+autocmd FileType tex nmap <F5> :wa<CR>:!rm -f %:r.aux<CR>:!pdflatex %<CR>:!pdflatex %<CR>
+":!evince %:r.pdf&<CR>
 " Expand bla to \bla{} and place cursor inside braces
 autocmd FileType tex imap <F6> {}<ESC>bbi\<ESC>wwa
 " Expand bla to \begin{bla} ... \end{bla} and places cursor on new line in
