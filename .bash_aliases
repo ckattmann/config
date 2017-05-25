@@ -46,5 +46,9 @@ alias bigfiles='du -a | sort -n -r | head -n 20'
 # Use portable pypy 2.4
 alias py24='~/spielwiese/pypy2.4-alpha/bin/pypy'
 
+# Open the dissertation tex in gvim
+alias diss='cd ~/Dropbox/diss && gvim diss.tex'
+alias showdiss='cd ~/Dropbox/diss && xreader diss.pdf &'
+
 # added by Anaconda3 4.0.0 installer
 export PATH="/home/kipfer/anaconda3/bin:$PATH"

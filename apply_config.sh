@@ -7,8 +7,10 @@ sudo apt-get install -y git
 git config --global user.name "kipfer"
 git config --global push.default simple
 
+
 echo "-- Download and install Anaconda"
 # TODO
+
 
 echo "-- Setting up Vim"
 if [ -e "~/.vimrc" ]
