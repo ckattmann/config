@@ -13,6 +13,7 @@ Plugin 'tpope/vim-commentary' " => gcc to comment out/in lines
 Plugin 'tpope/vim-surround' " => cs[{ to change ticks from [ to { 
 Plugin 'mattn/emmet-vim' " => <C>y, for fast html
 Plugin 'scrooloose/nerdtree'
+Plugin 'digitaltoad/vim-pug'
 call vundle#end()
 
 set laststatus=2
@@ -28,6 +29,9 @@ set ruler                   " Show Statusline
 set hlsearch
 
 set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+
+" Change file signature on save
+set backupcopy=yes
 
 " Automatically set parent directory of file as cwd
 set autochdir
@@ -89,7 +93,7 @@ autocmd FileType python nmap <F4> I#<ESC>
 
 "------LATEX-------
 " Compile Latex and show pdf
-autocmd FileType tex nmap <F5> :wa<CR>:!rm -f %:r.aux<CR>:!pdflatex %<CR>:!pdflatex %<CR>
+autocmd FileType tex nmap <F5> :wa<CR>:!rm -f %:r.aux<CR>:!xelatex %<CR>:!xelatex %<CR>
 ":!evince %:r.pdf&<CR>
 " Expand bla to \bla{} and place cursor inside braces
 autocmd FileType tex imap <F6> {}<ESC>bbi\<ESC>wwa
@@ -99,4 +103,9 @@ autocmd FileType tex imap <F7> <ESC>yiwi\begin{<ESC>ea}<ESC>o\end{<ESC>pa}<ESC>O
 autocmd FileType tex nmap <leader>c :w<CR>:!detex % <BAR> wc -w <CR>
 " Comment out line with <F4>
 autocmd FileType tex nmap <F4> I%<ESC>
+
+
+"------JSON------
+" Pretty print with F5
+autocmd Filetype json nmap <F5> :%!python -m json.tool<CR>
 augroup END
