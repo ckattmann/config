@@ -9,11 +9,11 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Valloric/MatchTagAlways' " => Highlights the active tags
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-commentary' " => gcc to comment out/in lines 
 Plugin 'tpope/vim-surround' " => cs[{ to change ticks from [ to { 
 Plugin 'mattn/emmet-vim' " => <C>y, for fast html
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 Plugin 'digitaltoad/vim-pug'
 call vundle#end()
 
@@ -38,7 +38,7 @@ set backupcopy=yes
 set autochdir
 
 " CTRL-T for Nerdtree
-map <C-t> :NERDTreeToggle<CR>
+" map <C-t> :NERDTreeToggle<CR>
 
 " More logical behaviour for j and k on multiline rows
 noremap j gj
